@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { ArrowRight, Palette, Code, Smartphone, Users, Mail, Github, Linkedin, Twitter, Heart } from 'lucide-react';
 import heroImage from '@/assets/hero-image.jpg';
 import profilePhoto from '@/assets/profile-photo.jpg';
@@ -220,44 +221,55 @@ const Portfolio = () => {
             Recent work that showcases my skills and creativity
           </p>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <Link 
-                key={project.id}
-                to={`/project/${project.id}`}
-                className="group animate-on-scroll animate-scale-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <Card className="card-elegant border-0 overflow-hidden group-hover:shadow-glow transition-smooth">
-                  <div className="aspect-video overflow-hidden">
-                    <img 
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
-                    />
-                  </div>
-                  <CardContent className="p-6">
-                    <h3 className="text-2xl font-semibold mb-3 text-primary group-hover:text-primary-hover transition-smooth">
-                      {project.title}
-                    </h3>
-                    <p className="text-muted-foreground mb-4 leading-relaxed">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.skills.map((skill) => (
-                        <span 
-                          key={skill}
-                          className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full"
-                        >
-                          {skill}
-                        </span>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
-          </div>
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full max-w-5xl mx-auto"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {projects.map((project, index) => (
+                <CarouselItem key={project.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/2">
+                  <Link 
+                    to={`/project/${project.id}`}
+                    className="group animate-on-scroll animate-scale-in block"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <Card className="card-elegant border-0 overflow-hidden group-hover:shadow-glow transition-smooth h-full">
+                      <div className="aspect-video overflow-hidden">
+                        <img 
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
+                        />
+                      </div>
+                      <CardContent className="p-6">
+                        <h3 className="text-2xl font-semibold mb-3 text-primary group-hover:text-primary-hover transition-smooth">
+                          {project.title}
+                        </h3>
+                        <p className="text-muted-foreground mb-4 leading-relaxed">
+                          {project.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {project.skills.map((skill) => (
+                            <span 
+                              key={skill}
+                              className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full"
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-4" />
+            <CarouselNext className="right-4" />
+          </Carousel>
         </div>
       </section>
 
