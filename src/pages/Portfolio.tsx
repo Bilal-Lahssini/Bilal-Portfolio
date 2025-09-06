@@ -274,8 +274,8 @@ const Portfolio = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-4" />
-            <CarouselNext className="right-4" />
+            <CarouselPrevious className="left-4 hidden md:block" />
+            <CarouselNext className="right-4 hidden md:block"  />
           </Carousel>
         </div>
       </section>
