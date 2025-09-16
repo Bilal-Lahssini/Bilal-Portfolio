@@ -18,6 +18,14 @@ import handMockup from '@/assets/HandMockup.png';
 import iMacMock from '@/assets/IMacMockup.png';
 import mockupFin from '@/assets/mockupFinance.png';
 import mockupTra from '@/assets/mockupTraining.png';
+import projectSocialInsta from '@/assets/SocialmediaMockUp.png';
+import ufinityGeel from '@/assets/Ufinity Team.png';
+import ufinityBlauw from '@/assets/Ufinity Projects.png';
+import ufinityGroen from '@/assets/Ufinity Professionals.png';
+import ufinityPaars from '@/assets/Ufinity Technology.png';
+
+
+
 
 interface Project {
   title: string;
@@ -127,6 +135,26 @@ const projectsData = {
       "Make Playlist of Favourite Songs → lost problemen met afspeellijsten op.",
       "Liked Songs Sharing → maakt het delen van favoriete nummers eenvoudiger.",
       "Artist Page Play Button → maakt de interface intuïtiever en sneller.",
+    ],
+    results: "",
+  },
+
+  5: {
+    title: "Ufinity Instagram visual design",
+    description: "Na de rebranding van Ufinity kreeg ik de opdracht om een reeks Instagram carousels te ontwerpen. Het doel was om de vernieuwde merkidentiteit door te trekken naar social media en te zorgen voor een consistente, professionele uitstraling.",
+    showcasedescription :'Gebruikers kunnen nu een nummer zoeken door het in te zingen of te neuriën. Zelfs als ze de titel of artiest niet precies weten, vinden ze zo snel het gewenste nummer. Dit zorgt voor een snellere, eenvoudigere en intuïtieve muziekervaring.',
+    showcasedescription2: 'Wanneer je op je account klikt, opent zich je profiel met een dropdownmenu vol handige opties. Gebruikers kunnen snel navigeren naar instellingen, hun favoriete content bekijken of hun persoonlijke voorkeuren aanpassen. Deze functie zorgt voor een overzichtelijke en toegankelijke ervaring, waardoor alle belangrijke accountopties binnen handbereik zijn.',
+    headerShowcase : 'Voice functie',
+    headerShowcase2 : 'Account instellingen',
+    image: projectSocialInsta,
+    mockups: [ufinityBlauw,ufinityGeel,ufinityGroen,ufinityPaars],
+    skills: ["UI/UX Design", "Figma", "Social media" , "Merkstrategie", "Content Creatie"],
+    buttonType: "live", // "live" or "code"
+    liveUrl: "", // Add your live prototype URL here
+    challenge: "Na de rebranding van Ufinity moest de vernieuwde visuele identiteit consequent worden toegepast op social media. De uitdaging lag in het ontwikkelen van Instagram carousels die niet alleen esthetisch aantrekkelijk waren, maar ook de nieuwe merkwaarden en herkenbaarheid duidelijk communiceerden.",
+    solution: "Ik ontwierp een reeks creatieve carousels waarin de nieuwe huisstijl centraal staat. Door het gebruik van consistente typografie, merk­kleuren en beeldmateriaal ontstond een herkenbare visuele lijn. Dit zorgde voor een feed die niet alleen professioneel oogt, maar ook bijdraagt aan de merkherkenning en storytelling van Ufinity.",
+    improvements: [
+      
     ],
     results: "",
   },
@@ -247,89 +275,160 @@ const ProjectDetail = () => {
       </section>
 
       {/* What I Did */}
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-12 text-center animate-fade-in">
-            Wat ik heb veranderd & verbeterd
-          </h2>
-          <div className="space-y-6">
-            {project.improvements.map((improvement, index) => (
-              <div 
-                key={index}
-                className="flex items-start gap-4 animate-slide-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                  <div className="w-2 h-2 bg-white rounded-full" />
-                </div>
-                <p className="text-lg leading-relaxed text-foreground">
-                  {improvement}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-       {/* Mockups Showcase */}
-      {project.mockups && project.mockups.length > 0 && (
-        <>
-          {/* First Mockup - Left Aligned */}
-          <section className="py-5 px-6">
-            <div className="max-w-6xl mx-auto">
-              <h2 className="text-3xl font-bold mb-12 text-center animate-fade-in">
-                Project Showcase
-              </h2>
-              <Card className="card-elegant animate-slide-up">
-                <CardContent className="p-8">
-                  <div className="grid lg:grid-cols-2 gap-12 items-center ">
-                    <div className="animate-fade-in">
-                      <h3 className="text-2xl font-semibold mb-4 text-primary">{project.headerShowcase}</h3>
-                      <p className="text-muted-foreground leading-relaxed mb-6">
-                        {project.showcasedescription}
-                      </p>
-                    </div>
-                    <div className="animate-scale-in">
-                      <img 
-                        src={project.mockups[0]}
-                        alt={`${project.title} mockup 1`}
-                        className="w-full rounded-2xl shadow-glow"
-                      />
-                    </div>
+      {Number(id) !== 5 && (
+        <section className="py-20 px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-12 text-center animate-fade-in">
+              Wat Ik Veranderde & Verbeterde
+            </h2>
+            <div className="space-y-6">
+              {project.improvements.map((improvement, index) => (
+                <div 
+                  key={index}
+                  className="flex items-start gap-4 animate-slide-up"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-2 h-2 bg-white rounded-full" />
                   </div>
-                </CardContent>
-              </Card>
+                  <p className="text-lg leading-relaxed text-foreground">
+                    {improvement}
+                  </p>
+                </div>
+              ))}
             </div>
-          </section>
+          </div>
+        </section>
+      )}
 
-          {/* Second Mockup - Right Aligned */}
-          {project.mockups.length > 1 && (
-            <section className="py-20 px-6 bg-muted/30">
+      {/* Photo Carousel - Special treatment for Social Media project */}
+      {Number(id) === 5 && project.mockups && project.mockups.length > 0 ? (
+        <section className="py-20 px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-12 text-center animate-fade-in">
+              Carousels in nieuwe huisstijl
+            </h2>
+            <Carousel 
+              className="w-full animate-scale-in"
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+            >
+              <CarouselContent>
+                {project.mockups.map((mockup, index) => (
+                  <CarouselItem key={index}>
+                    <div className="p-1">
+                      <Card className="card-elegant">
+                        <CardContent className="flex aspect-square items-center justify-center p-6">
+                          <img 
+                            src={mockup}
+                            alt={`${project.title} foto ${index + 1}`}
+                            className="w-full h-full object-cover rounded-lg shadow-glow"
+                          />
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
+          </div>
+        </section>
+      ) : (
+        /* Regular Mockups Showcase for other projects */
+        project.mockups && project.mockups.length > 0 && (
+          <>
+            {/* First Mockup - Left Aligned */}
+            <section className="py-20 px-6">
               <div className="max-w-6xl mx-auto">
-                <Card className="card-elegant animate-slide-up" style={{ animationDelay: '0.2s' }}>
+                <h2 className="text-3xl font-bold mb-12 text-center animate-fade-in">
+                  Project Showcase
+                </h2>
+                <Card className="card-elegant animate-slide-up">
                   <CardContent className="p-8">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
                       <div className="animate-scale-in lg:order-1">
                         <img 
-                          src={project.mockups[1]}
-                          alt={`${project.title} mockup 2`}
+                          src={project.mockups[0]}
+                          alt={`${project.title} mockup 1`}
                           className="w-full rounded-2xl shadow-glow"
                         />
                       </div>
                       <div className="animate-fade-in lg:order-2">
-                        <h3 className="text-2xl font-semibold mb-4 text-primary">{project.headerShowcase2}</h3>
+                        <h3 className="text-2xl font-semibold mb-4 text-primary">Design Concept</h3>
                         <p className="text-muted-foreground leading-relaxed mb-6">
-                          {project.showcasedescription2}
+                          {project.description} Dit project toont de implementatie van moderne design principes 
+                          en gebruikersgerichte functionaliteit die een uitstekende gebruikerservaring biedt.
                         </p>
+                        <div className="space-y-3">
+                          <div className="flex items-center gap-3">
+                            <div className="w-2 h-2 bg-primary rounded-full"></div>
+                            <span className="text-foreground">Moderne & Responsieve Design</span>
+                          </div>
+                          <div className="flex items-center gap-3">
+                            <div className="w-2 h-2 bg-primary rounded-full"></div>
+                            <span className="text-foreground">Hoogwaardige Code Kwaliteit</span>
+                          </div>
+                          <div className="flex items-center gap-3">
+                            <div className="w-2 h-2 bg-primary rounded-full"></div>
+                            <span className="text-foreground">Optimale Gebruikerservaring</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
               </div>
             </section>
-          )}
-        </>
+
+            {/* Second Mockup - Right Aligned */}
+            {project.mockups.length > 1 && (
+              <section className="py-20 px-6 bg-muted/30">
+                <div className="max-w-6xl mx-auto">
+                  <Card className="card-elegant animate-slide-up" style={{ animationDelay: '0.2s' }}>
+                    <CardContent className="p-8">
+                      <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="animate-fade-in">
+                          <h3 className="text-2xl font-semibold mb-4 text-primary">Implementation</h3>
+                          <p className="text-muted-foreground leading-relaxed mb-6">
+                            De technische implementatie focust op prestaties en schaalbaarheid. 
+                            Elke component is zorgvuldig ontworpen voor herbruikbaarheid en onderhoudbaarheid.
+                          </p>
+                          <div className="space-y-3">
+                            <div className="flex items-center gap-3">
+                              <div className="w-2 h-2 bg-primary rounded-full"></div>
+                              <span className="text-foreground">Schaalbare Architectuur</span>
+                            </div>
+                            <div className="flex items-center gap-3">
+                              <div className="w-2 h-2 bg-primary rounded-full"></div>
+                              <span className="text-foreground">Geoptimaliseerde Prestaties</span>
+                            </div>
+                            <div className="flex items-center gap-3">
+                              <div className="w-2 h-2 bg-primary rounded-full"></div>
+                              <span className="text-foreground">Cross-browser Compatibiliteit</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="animate-scale-in">
+                          <img 
+                            src={project.mockups[1]}
+                            alt={`${project.title} mockup 2`}
+                            className="w-full rounded-2xl shadow-glow"
+                          />
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </section>
+            )}
+          </>
+        )
       )}
+
 
        {/* Other Projects Section */}
       <section className="py-20 px-6">

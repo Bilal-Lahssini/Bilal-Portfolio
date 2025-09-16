@@ -13,6 +13,7 @@ import projectUiDesign from '@/assets/project-ui-design.jpg';
 import projectSocialMedia from '@/assets/VergaderzaalMockup.png';
 import projectCoding from '@/assets/project-coding.jpg';
 import iMacMock from '@/assets/IMacMockup.png';
+import projectSocialInsta from '@/assets/SocialmediaMockUp.png';
 
 const projects = [
   {
@@ -44,6 +45,14 @@ const projects = [
     description: "Deze case study richt zich op het verbeteren van de Spotify-mobiele app door het herontwerpen van de interface en het toevoegen van functionaliteiten.",
     image: projectUiDesign,
     skills: ["UI/UX Design", "Figma", "User Research"]
+  },
+
+  {
+    id: 5,
+    title: "Ufinity Instagram Visual Design",
+    description: "Ontwerp van creatieve Instagram-posts met focus op merkidentiteit en visuele samenhang. Door gebruik van typografie, kleur en beeld ontstaat een consistente en herkenbare feed.",
+    image: projectSocialInsta,
+    skills: ["UI/UX Design", "Figma", "Social Media", "Content Creatie", "Merkstrategie"]
   },
 
 ];
@@ -237,7 +246,7 @@ const Portfolio = () => {
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {projects.map((project, index) => (
-                <CarouselItem key={project.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/2">
+                <CarouselItem key={project.id} className="pl-2 md:pl-4 md:basis-1/3 lg:basis-1/3">
                   <Link 
                     to={`/project/${project.id}`}
                     className="group animate-on-scroll animate-scale-in block"
@@ -274,8 +283,6 @@ const Portfolio = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="left-4 hidden md:block" />
-            <CarouselNext className="right-4 hidden md:block"  />
           </Carousel>
         </div>
       </section>
