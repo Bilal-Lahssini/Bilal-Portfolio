@@ -358,25 +358,10 @@ const ProjectDetail = () => {
                         />
                       </div>
                       <div className="animate-fade-in lg:order-2">
-                        <h3 className="text-2xl font-semibold mb-4 text-primary">Design Concept</h3>
+                        <h3 className="text-2xl font-semibold mb-4 text-primary">{project.headerShowcase}</h3>
                         <p className="text-muted-foreground leading-relaxed mb-6">
-                          {project.description} Dit project toont de implementatie van moderne design principes 
-                          en gebruikersgerichte functionaliteit die een uitstekende gebruikerservaring biedt.
+                          {project.showcasedescription} 
                         </p>
-                        <div className="space-y-3">
-                          <div className="flex items-center gap-3">
-                            <div className="w-2 h-2 bg-primary rounded-full"></div>
-                            <span className="text-foreground">Moderne & Responsieve Design</span>
-                          </div>
-                          <div className="flex items-center gap-3">
-                            <div className="w-2 h-2 bg-primary rounded-full"></div>
-                            <span className="text-foreground">Hoogwaardige Code Kwaliteit</span>
-                          </div>
-                          <div className="flex items-center gap-3">
-                            <div className="w-2 h-2 bg-primary rounded-full"></div>
-                            <span className="text-foreground">Optimale Gebruikerservaring</span>
-                          </div>
-                        </div>
                       </div>
                     </div>
                   </CardContent>
@@ -392,25 +377,10 @@ const ProjectDetail = () => {
                     <CardContent className="p-8">
                       <div className="grid lg:grid-cols-2 gap-12 items-center">
                         <div className="animate-fade-in">
-                          <h3 className="text-2xl font-semibold mb-4 text-primary">Implementation</h3>
+                          <h3 className="text-2xl font-semibold mb-4 text-primary">{project.headerShowcase2}</h3>
                           <p className="text-muted-foreground leading-relaxed mb-6">
-                            De technische implementatie focust op prestaties en schaalbaarheid. 
-                            Elke component is zorgvuldig ontworpen voor herbruikbaarheid en onderhoudbaarheid.
+                            {project.showcasedescription2} 
                           </p>
-                          <div className="space-y-3">
-                            <div className="flex items-center gap-3">
-                              <div className="w-2 h-2 bg-primary rounded-full"></div>
-                              <span className="text-foreground">Schaalbare Architectuur</span>
-                            </div>
-                            <div className="flex items-center gap-3">
-                              <div className="w-2 h-2 bg-primary rounded-full"></div>
-                              <span className="text-foreground">Geoptimaliseerde Prestaties</span>
-                            </div>
-                            <div className="flex items-center gap-3">
-                              <div className="w-2 h-2 bg-primary rounded-full"></div>
-                              <span className="text-foreground">Cross-browser Compatibiliteit</span>
-                            </div>
-                          </div>
                         </div>
                         <div className="animate-scale-in">
                           <img 

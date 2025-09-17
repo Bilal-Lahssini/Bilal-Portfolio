@@ -14,6 +14,7 @@ import projectSocialMedia from '@/assets/VergaderzaalMockup.png';
 import projectCoding from '@/assets/project-coding.jpg';
 import iMacMock from '@/assets/IMacMockup.png';
 import projectSocialInsta from '@/assets/SocialmediaMockUp.png';
+import posikIpad from '@/assets/PosikiPadMock.png';
 
 const projects = [
   {
@@ -53,6 +54,14 @@ const projects = [
     description: "Ontwerp van creatieve Instagram-posts met focus op merkidentiteit en visuele samenhang. Door gebruik van typografie, kleur en beeld ontstaat een consistente en herkenbare feed.",
     image: projectSocialInsta,
     skills: ["UI/UX Design", "Figma", "Social Media", "Content Creatie", "Merkstrategie"]
+  },
+
+  {
+    id: 6,
+    title: "POS Systeem Restaurant",
+    description: "Een eenvoudig en snel POS-systeem speciaal ontwikkeld voor de verkoop van eten. Het maakt het afrekenen makkelijk en efficiënt, zodat je klanten vlot bediend worden.",
+    image: posikIpad,
+    skills: ["UI/UX Design", "Figma", "Prototyping", "Gebruikersonderzoek", "Wireframing"]
   },
 
 ];
@@ -111,8 +120,8 @@ const Portfolio = () => {
               texts={[
                 "Hallo, ik ben Bilal", 
                 "Web Designer", 
-                "UX/UI Designer", 
                 "Frontend Developer", 
+                "UX/UI Designer", 
                 "Creative Developer", 
                 "WordPress Developer"
               ]} 
