@@ -4,11 +4,12 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
-import { ArrowRight, Palette, Code, Smartphone, Users, Mail, Github, Linkedin, Twitter, Heart } from 'lucide-react';
+import { ArrowRight, Palette, Code, Smartphone, Users, Mail, Github, Linkedin, Twitter, Quote } from 'lucide-react';
 import heroImage from '@/assets/hero-image.jpg';
 import profilePhoto from '@/assets/profile-photo.jpg';
 import mockupLaptop from '@/assets/Mockup Laptop.png';
 import { AnimatedText } from '@/components/AnimatedText';
+import { motion } from 'framer-motion';
 import projectUiDesign from '@/assets/project-ui-design.jpg';
 import projectSocialMedia from '@/assets/VergaderzaalMockup.png';
 import projectCoding from '@/assets/project-coding.jpg';
@@ -89,6 +90,16 @@ const skills = [
   }
 ];
 
+const testimonials = [
+  {
+    id: 1,
+    name: "Abraham Kucam",
+    role: "Eigenaar, Trattoria Di Pepe",
+    content: "Bilal heeft onze visie perfect vertaald naar een prachtige website. De samenwerking verliep soepel en het eindresultaat overtrof onze verwachtingen. Onze online aanwezigheid is nu professioneel en trekt meer klanten aan.",
+    rating: 5
+  },
+];
+
 const Portfolio = () => {
   useEffect(() => {
     const elements = document.querySelectorAll('.animate-on-scroll');
@@ -158,10 +169,23 @@ const Portfolio = () => {
       </section>
 
       {/* About Me Section */}
-      <section id="about" className="py-20 px-6">
+      <motion.section 
+        id="about" 
+        className="py-20 px-6"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="animate-fade-in">
+            <motion.div 
+              className="animate-fade-in"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <h2 className="text-4xl font-bold mb-6 text-primary">Over mij</h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 Hallo, ik ben Bilal met een achtergrond in informaticabeheer en meer dan 3 jaar ervaring in digitaal design, help ik ondernemers om
@@ -177,67 +201,119 @@ const Portfolio = () => {
                 ik luister naar jouw wensen, denk strategisch mee en werk zorgvuldig tot in de details. 
                 Het resultaat is een website die niet alleen bij jou past, maar ook jouw klanten overtuigt.
               </p>
-            </div>
+            </motion.div>
             
-            <div className="animate-scale-in">
+            <motion.div 
+              className="animate-scale-in"
+              initial={{ opacity: 0, x: 50, scale: 0.9 }}
+              whileInView={{ opacity: 1, x: 0, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              viewport={{ once: true, amount: 0.3 }}
+            >
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl transform rotate-6"></div>
                 <img 
                   src={profilePhoto}
-                  alt="Sarah Johnson - UX/UI Designer & Developer"
+                  alt="Bilal Lahssini - UX/UI Designer & Developer"
                   className="relative rounded-3xl shadow-glow w-full max-w-md mx-auto"
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-6">
+      <motion.section 
+        id="skills" 
+        className="py-20 px-6"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-4 animate-on-scroll animate-fade-in">
+          <motion.h2 
+            className="text-4xl font-bold text-center mb-4 animate-on-scroll animate-fade-in"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             Wat ik doe
-          </h2>
-          <p className="text-xl text-muted-foreground text-center mb-16 animate-on-scroll animate-slide-up">
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-muted-foreground text-center mb-16 animate-on-scroll animate-slide-up"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             Vaardigheden om jou visie in werkelijk te brengen.
-          </p>
+          </motion.p>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {skills.map((skill, index) => (
-              <Card 
+              <motion.div
                 key={skill.name}
-                className="card-elegant border-0 animate-on-scroll animate-scale-in group hover:scale-105 transition-smooth"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.1 + 0.6,
+                  ease: "easeOut" 
+                }}
+                viewport={{ once: true, amount: 0.3 }}
               >
-                <CardContent className="p-6 text-center">
-                  <div className="mb-4 flex justify-center">
-                    <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-smooth">
-                      <skill.icon size={32} className="text-primary" />
+                <Card className="card-elegant border-0 animate-on-scroll animate-scale-in group hover:scale-105 transition-smooth">
+                  <CardContent className="p-6 text-center">
+                    <div className="mb-4 flex justify-center">
+                      <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-smooth">
+                        <skill.icon size={32} className="text-primary" />
+                      </div>
                     </div>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3 text-primary">
-                    {skill.name}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {skill.description}
-                  </p>
-                </CardContent>
-              </Card>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">
+                      {skill.name}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {skill.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-6 bg-muted/30">
+      <motion.section 
+        id="projects" 
+        className="py-20 px-6 bg-muted/30"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-4 animate-on-scroll animate-fade-in">
+          <motion.h2 
+            className="text-4xl font-bold text-center mb-4 animate-on-scroll animate-fade-in"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             Een selectie van projecten waar ik aan bijdroeg
-          </h2>
-          <p className="text-xl text-muted-foreground text-center mb-16 animate-on-scroll animate-slide-up">
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-muted-foreground text-center mb-16 animate-on-scroll animate-slide-up"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             Projecten en skills die mijn creativiteit in de kijker zetten
-          </p>
+          </motion.p>
           
           <Carousel
             opts={{
@@ -294,18 +370,110 @@ const Portfolio = () => {
             </CarouselContent>
           </Carousel>
         </div>
-      </section>
+      </motion.section>
+
+        {/* Testimonials Section */}
+      <motion.section 
+        id="testimonials" 
+        className="py-20 px-6"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <div className="max-w-6xl mx-auto">
+          <motion.h2 
+            className="text-4xl font-bold text-center mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            Wat Klanten Zeggen
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-muted-foreground text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            Reviews van mensen die ik heb geholpen
+          </motion.p>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={testimonial.id}
+                initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.15 + 0.6,
+                  ease: "easeOut" 
+                }}
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                <Card className="card-elegant border-0 h-full group hover:scale-105 transition-smooth">
+                  <CardContent className="p-6">
+                    <div className="mb-4">
+                      <Quote size={32} className="text-primary/30" />
+                    </div>
+                    <p className="text-muted-foreground mb-6 leading-relaxed italic">
+                      "{testimonial.content}"
+                    </p>
+                    <div className="flex items-center gap-1 mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <span key={i} className="text-yellow-500">★</span>
+                      ))}
+                    </div>
+                    <div className="border-t border-border pt-4">
+                      <p className="font-semibold text-primary">{testimonial.name}</p>
+                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
 
        {/* Contact Section */}
-      <section id="contact" className="py-20 px-6">
+      <motion.section 
+        id="contact" 
+        className="py-20 px-6"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6 animate-on-scroll animate-fade-in">
+          <motion.h2 
+            className="text-4xl font-bold mb-6 animate-on-scroll animate-fade-in"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             Laten We Samenwerken
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8 animate-on-scroll animate-slide-up">
+          </motion.h2>
+          <motion.p 
+            className="text-xl text-muted-foreground mb-8 animate-on-scroll animate-slide-up"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             Klaar om jouw project tot leven te brengen? Ik hoor graag van je.
-          </p>
-          <div className="animate-on-scroll animate-scale-in flex flex-col sm:flex-row gap-4 justify-center">
+          </motion.p>
+          <motion.div 
+            className="animate-on-scroll animate-scale-in flex flex-col sm:flex-row gap-4 justify-center"
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             <Button 
               asChild
               size="lg"
@@ -329,9 +497,9 @@ const Portfolio = () => {
                 <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Footer */}
       <footer className="bg-muted/50 border-t border-border">
