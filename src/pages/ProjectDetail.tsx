@@ -23,6 +23,8 @@ import ufinityGeel from '@/assets/Ufinity Team.png';
 import ufinityBlauw from '@/assets/Ufinity Projects.png';
 import ufinityGroen from '@/assets/Ufinity Professionals.png';
 import ufinityPaars from '@/assets/Ufinity Technology.png';
+import posikIpad from '@/assets/PosikiPadMock.png';
+
 
 
 
@@ -43,6 +45,7 @@ interface Project {
   solution: string;
   improvements: string[];
   results: string;
+  projectTitle : string;
 }
 
 const projectsData = {
@@ -58,6 +61,7 @@ const projectsData = {
     skills: ["WordPress","Figma","UI/UX Design","Responsive Design" ,"SEO"],
     buttonType: "live", // "live" or "code"
     liveUrl: "https://trattoriadipepe.be/", // Add your live website URL here
+    projectTitle : "",
     challenge: "Trattoria di Pepe had geen website klanten konden het menu niet online bekijken en moesten altijd bellen om informatie of reserveringen te krijgen. Dit leidde tot minder zichtbaarheid van het restaurant online en verlies van potentiële klanten die het menu wilden bekijken voordat ze kwamen.",
     solution: "Er is een nieuwe website ontwikkeld met een overzichtelijk menu en duidelijke contactinformatie. Het mobielvriendelijke design zorgt ervoor dat bezoekers ook via smartphone gemakkelijk het menu en de openingstijden kunnen bekijken.",
     improvements: [
@@ -81,6 +85,7 @@ const projectsData = {
     skills: ["WordPress","Figma","UI/UX Design","Responsive Design" ,"SEO"],
     buttonType: "live", // "live" or "code"
     liveUrl: "https://vergaderzalenantwerpen.be/", // Add your live campaign URL here
+    projectTitle : "",
     challenge: "De grootste uitdaging lag in het feit dat de vergaderruimtes en de trainingsruimte van Ufinity niet voldoende zichtbaar waren voor potentiële klanten. Er was dus nood aan een aparte, professionele website die UcoWork als zelfstandig merk kon neerzetten, beter vindbaar zou maken en het verhuurproces efficiënter kon laten verlopen.",
     solution: "Ik ontwierp een concept, gebruiksvriendelijke website voor UcoWork. Elke ruimte heeft een eigen detailpagina met info over capaciteit, faciliteiten en een directe reserveringsknop. Daarnaast werkte ik een SEO-strategie uit met zoekwoorden als vergaderruimte huren [stad], trainingsruimte, coworking space en meeting locatie, zodat UcoWork ook organisch beter gevonden wordt.",
     improvements: [
@@ -106,6 +111,7 @@ const projectsData = {
     skills: ["WordPress","Figma","UI/UX Design","Responsive Design" ,"SEO"],
     buttonType: "live", // "live" or "code"
     liveUrl: "https://financieletrainingenantwerpen.be/", // Add your live application URL here
+    projectTitle : "",
     challenge: "Veel geïnteresseerden wisten niet goed welke trainingen er beschikbaar waren of welke thema’s werden behandeld. Informatie was enkel te verkrijgen via telefoon of e-mail, wat onoverzichtelijk en tijdrovend was.",
     solution: "Met de nieuwe website zijn alle trainingen nu duidelijk gebundeld en eenvoudig terug te vinden. Bezoekers kunnen het aanbod ontdekken, meteen meer lezen over de inhoud en zich rechtstreeks inschrijven, wat het proces een stuk gebruiksvriendelijker maakt.",
     improvements: [
@@ -128,6 +134,7 @@ const projectsData = {
     skills: ["UI/UX Design", "Figma", "Prototyping", "Gebruikersonderzoek", "Wireframing"],
     buttonType: "live", // "live" or "code"
     liveUrl: "", // Add your live prototype URL here
+    projectTitle : "",
     challenge: "De uitdaging is om de Spotify-app opnieuw vorm te geven met behulp van design thinking. Je bedenkt een nieuw concept om innovatieve functies te ontwikkelen die de conversie verhogen. Daarbij werk je een compact design system uit met enkel de noodzakelijke componenten",
     solution: "Met mijn redesign heb ik deze behoefte grotendeels opgelost door problemen aan te pakken zoals het niet onthouden van nummers, fouten in afspeellijsten, moeilijke deelopties en een ingewikkelde interface. Zo hoeven gebruikers geen andere apps meer te gebruiken",
     improvements: [
@@ -151,8 +158,30 @@ const projectsData = {
     skills: ["UI/UX Design", "Figma", "Social media" , "Merkstrategie", "Content Creatie"],
     buttonType: "live", // "live" or "code"
     liveUrl: "", // Add your live prototype URL here
+    projectTitle : "Carousels in nieuwe huisstijl",
     challenge: "Na de rebranding van Ufinity moest de vernieuwde visuele identiteit consequent worden toegepast op social media. De uitdaging lag in het ontwikkelen van Instagram carousels die niet alleen esthetisch aantrekkelijk waren, maar ook de nieuwe merkwaarden en herkenbaarheid duidelijk communiceerden.",
     solution: "Ik ontwierp een reeks creatieve carousels waarin de nieuwe huisstijl centraal staat. Door het gebruik van consistente typografie, merk­kleuren en beeldmateriaal ontstond een herkenbare visuele lijn. Dit zorgde voor een feed die niet alleen professioneel oogt, maar ook bijdraagt aan de merkherkenning en storytelling van Ufinity.",
+    improvements: [
+      
+    ],
+    results: "",
+  },
+
+  6: {
+    title: "POS Systeem Restaurant",
+    description: "Voor mijn hogeschoolproject heb ik een POS-systeem (Point of Sale) ontwikkeld voor restaurants. Medewerkers kunnen inloggen met hun persoonlijke viercijferige code en op een duidelijke, gebruiksvriendelijke interface eenvoudig producten aanduiden en bestellingen invoeren. Het systeem is ontworpen om het bestelproces sneller en efficiënter te maken.",
+    showcasedescription :'Gebruikers kunnen nu een nummer zoeken door het in te zingen of te neuriën. Zelfs als ze de titel of artiest niet precies weten, vinden ze zo snel het gewenste nummer. Dit zorgt voor een snellere, eenvoudigere en intuïtieve muziekervaring.',
+    showcasedescription2: 'Wanneer je op je account klikt, opent zich je profiel met een dropdownmenu vol handige opties. Gebruikers kunnen snel navigeren naar instellingen, hun favoriete content bekijken of hun persoonlijke voorkeuren aanpassen. Deze functie zorgt voor een overzichtelijke en toegankelijke ervaring, waardoor alle belangrijke accountopties binnen handbereik zijn.',
+    headerShowcase : 'Voice functie',
+    headerShowcase2 : 'Account instellingen',
+    image: posikIpad ,
+    mockups: [ufinityBlauw,ufinityGeel,ufinityGroen,ufinityPaars],
+    skills: ["UI/UX Design", "Figma", "Prototyping", "Gebruikersonderzoek", "Wireframing"],
+    buttonType: "live", // "live" or "code"
+    liveUrl: "", // Add your live prototype URL here
+    projectTitle : "Mockups",
+    challenge: "De grootste uitdaging was om het systeem eenvoudig en duidelijk te maken, zodat iedereen het snel kan leren gebruiken.",
+    solution: "De oplossing was een gebruiksvriendelijke lay-out met grote knoppen, duidelijke teksten en foto’s van de producten. Zo kunnen werknemers sneller en met minder fouten werken. Alle gegevens worden veilig opgeslagen, zodat het systeem goed blijft functioneren.",
     improvements: [
       
     ],
@@ -275,7 +304,7 @@ const ProjectDetail = () => {
       </section>
 
       {/* What I Did */}
-      {Number(id) !== 5 && (
+      {Number(id) !== 5 && Number(id) !== 6 &&(
         <section className="py-20 px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-12 text-center animate-fade-in">
@@ -302,11 +331,11 @@ const ProjectDetail = () => {
       )}
 
       {/* Photo Carousel - Special treatment for Social Media project */}
-      {Number(id) === 5 && project.mockups && project.mockups.length > 0 ? (
+      {Number(id) === 5 || Number(id) === 6 &&  project.mockups && project.mockups.length > 0 ? (
         <section className="py-20 px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-12 text-center animate-fade-in">
-              Carousels in nieuwe huisstijl
+                 {project.projectTitle}
             </h2>
             <Carousel 
               className="w-full animate-scale-in"
