@@ -169,7 +169,7 @@ const Portfolio = () => {
 
       {/* About Me Section */}
       <motion.section 
-        id="about" 
+        id="over mij" 
         className="py-20 px-6"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -287,7 +287,7 @@ const Portfolio = () => {
 
       {/* Projects Section */}
       <motion.section 
-        id="projects" 
+        id="projecten" 
         className="py-20 px-6 bg-muted/30"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
