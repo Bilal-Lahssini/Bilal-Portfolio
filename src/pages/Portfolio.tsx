@@ -490,7 +490,7 @@ const Portfolio = () => {
               size="lg"
               className="text-lg px-8 py-6 transition-smooth group"
             >
-              <a href="https://www.linkedin.com/in/bilal-lahssini-a17a31235/npm" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/bilal-lahssini-a17a31235/" target="_blank" rel="noopener noreferrer">
                 <Linkedin size={20} className="mr-2" />
                 LinkedIn
                 <ArrowRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
