@@ -512,7 +512,7 @@ const Portfolio = () => {
               </p>
               <div className="flex gap-4">
                 <a 
-                  href="https://www.linkedin.com/in/bilal-lahssini-a17a31235/"
+                  href="https://www.linkedin.com/in/bilal-lahssini-a17a31235"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-smooth"
