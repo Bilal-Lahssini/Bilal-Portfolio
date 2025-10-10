@@ -16,7 +16,6 @@ import projectCoding from '@/assets/project-coding.jpg';
 import iMacMock from '@/assets/IMacMockup.png';
 import projectSocialInsta from '@/assets/SocialmediaMockUp.png';
 import posikIpad from '@/assets/PosikiPadMock.png';
-
 const projects = [
   {
     id: 1,
