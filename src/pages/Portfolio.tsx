@@ -148,7 +148,7 @@ const Portfolio = () => {
               size="lg"
               className="bg-white/20 text-white border border-white/30 hover:bg-white/30 backdrop-blur-sm transition-smooth text-lg px-8 py-6 group"
             >
-              <a href="#projects" className="flex items-center gap-2">
+              <a href="#projecten" className="flex items-center gap-2">
                 Bekijk mijn projecten
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
               </a>
@@ -159,7 +159,7 @@ const Portfolio = () => {
               size="lg"
               className="bg-transparent text-white border-white/30 hover:bg-white/10 backdrop-blur-sm transition-smooth text-lg px-8 py-6"
             >
-              <a href="#about">Over mij</a>
+              <a href="#over mij">Over mij</a>
             </Button>
           </div>
           
@@ -533,8 +533,8 @@ const Portfolio = () => {
             <div>
               <h4 className="font-semibold text-foreground mb-4">Snelle Links</h4>
               <ul className="space-y-2">
-                <li><a href="#about" className="text-muted-foreground hover:text-primary transition-smooth">Over mij</a></li>
-                <li><a href="#projects" className="text-muted-foreground hover:text-primary transition-smooth">Projecten</a></li>
+                <li><a href="#over mij" className="text-muted-foreground hover:text-primary transition-smooth">Over mij</a></li>
+                <li><a href="#projecten" className="text-muted-foreground hover:text-primary transition-smooth">Projecten</a></li>
                 <li><a href="#skills" className="text-muted-foreground hover:text-primary transition-smooth">Skills</a></li>
                 <li><a href="#contact" className="text-muted-foreground hover:text-primary transition-smooth">Contact</a></li>
               </ul>
