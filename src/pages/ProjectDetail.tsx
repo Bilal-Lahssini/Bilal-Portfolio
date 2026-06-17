@@ -24,6 +24,9 @@ import ufinityBlauw from '@/assets/Ufinity Projects.png';
 import ufinityGroen from '@/assets/Ufinity Professionals.png';
 import ufinityPaars from '@/assets/Ufinity Technology.png';
 import posikIpad from '@/assets/PosikiPadMock.png';
+import Posikpc from '@/assets/PosikPC.png';
+import PosikMockup from '@/assets/Posik Mockup.png';
+
 
 
 
@@ -175,7 +178,7 @@ const projectsData = {
     headerShowcase : 'Voice functie',
     headerShowcase2 : 'Account instellingen',
     image: posikIpad ,
-    mockups: [ufinityBlauw,ufinityGeel,ufinityGroen,ufinityPaars],
+    mockups: [PosikMockup,Posikpc,posikIpad],
     skills: ["UI/UX Design", "Figma", "Prototyping", "Gebruikersonderzoek", "Wireframing"],
     buttonType: "live", // "live" or "code"
     liveUrl: "", // Add your live prototype URL here
