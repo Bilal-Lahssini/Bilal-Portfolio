@@ -178,7 +178,7 @@ const projectsData = {
     headerShowcase : 'Voice functie',
     headerShowcase2 : 'Account instellingen',
     image: posikIpad ,
-    mockups: [PosikMockup,Posikpc,posikIpad],
+    mockups: [Posikpc,posikIpad],
     skills: ["UI/UX Design", "Figma", "Prototyping", "Gebruikersonderzoek", "Wireframing"],
     buttonType: "live", // "live" or "code"
     liveUrl: "", // Add your live prototype URL here
