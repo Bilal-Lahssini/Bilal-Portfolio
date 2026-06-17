@@ -97,16 +97,42 @@ const testimonials = [
     content: "Bilal heeft onze visie perfect vertaald naar een prachtige website. De samenwerking verliep soepel en het eindresultaat overtrof onze verwachtingen. Onze online aanwezigheid is nu professioneel en trekt meer klanten aan.",
     rating: 5
   },
+
+  {
+    id: 2,
+    name: "El Yakhloufi Ilyas",
+    role: "Eigenaar, Attestor",
+    content: "Dankzij de nieuwe website van Attestor.be beschikken we over een professionele online aanwezigheid die onze diensten duidelijk presenteert en bezoekers snel naar de juiste informatie leidt.",
+    rating: 5
+  }
+  
 ];
 
 const Portfolio = () => {
+  // Aangepaste useEffect die EN animaties regelt EN naar de juiste sectie scrollt
   useEffect(() => {
+    // 1. Bestaande code voor animatievertragingen
     const elements = document.querySelectorAll('.animate-on-scroll');
     elements.forEach((el, index) => {
       const htmlElement = el as HTMLElement;
       htmlElement.style.animationDelay = `${index * 0.1}s`;
     });
-  }, []);
+
+    // 2. NIEUW: Luister naar de '#' in de URL bij het laden van de pagina
+    const hash = window.location.hash;
+    if (hash) {
+      const targetId = hash.replace("#", "");
+      // Gebruik decodeURIComponent voor het geval er spaties in de ID staan zoals "over mij"
+      const element = document.getElementById(decodeURIComponent(targetId));
+      
+      if (element) {
+        // Een kleine time-out zodat React de tijd heeft om de elementen te renderen
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 150);
+      }
+    }
+  }, []); // Draait eenmalig wanneer de portfolio pagina opent
 
   return (
     <div className="min-h-screen bg-background">
@@ -367,6 +393,10 @@ const Portfolio = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
+
+            <CarouselPrevious className="absolute left-[-2rem] top-1/2 -translate-y-1/2 hidden md:flex" />
+            <CarouselNext className="absolute right-[-2rem] top-1/2 -translate-y-1/2 hidden md:flex" />
+
           </Carousel>
         </div>
       </motion.section>

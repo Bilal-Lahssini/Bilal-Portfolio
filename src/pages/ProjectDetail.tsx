@@ -201,7 +201,7 @@ const ProjectDetail = () => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Project Niet Gevonden</h1>
-          <Link to="/">
+          <Link to="">
             <Button>Terug naar Portfolio</Button>
           </Link>
         </div>
@@ -215,7 +215,7 @@ const ProjectDetail = () => {
       <nav className="sticky top-0 bg-background/95 backdrop-blur-sm border-b border-border z-50">
         <div className="max-w-6xl mx-auto px-6 py-4">
           <Link 
-            to="/"
+            to="/#projecten"
             className="inline-flex items-center gap-2 text-primary hover:text-primary-hover transition-smooth"
           >
             <ArrowLeft size={20} />
