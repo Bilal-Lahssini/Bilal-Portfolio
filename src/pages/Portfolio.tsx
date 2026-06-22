@@ -4,11 +4,12 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
-import { ArrowRight, Palette, Code, Smartphone, Users, Mail, Github, Linkedin, Twitter, Quote } from 'lucide-react';
+import { ArrowRight, Palette, Code, Smartphone, Users, Mail, Github, Linkedin, Twitter, Quote, MonitorCheck, Wrench } from 'lucide-react';
 import heroImage from '@/assets/hero-image.jpg';
 import profilePhoto from '@/assets/profile-photo.jpg';
 import mockupLaptop from '@/assets/Mockup Laptop.png';
 import { AnimatedText } from '@/components/AnimatedText';
+import { Navbar } from '@/components/Navbar';
 import { motion } from 'framer-motion';
 import projectUiDesign from '@/assets/project-ui-design.jpg';
 import projectSocialMedia from '@/assets/VergaderzaalMockup.png';
@@ -16,6 +17,7 @@ import projectCoding from '@/assets/project-coding.jpg';
 import iMacMock from '@/assets/IMacMockup.png';
 import projectSocialInsta from '@/assets/SocialmediaMockUp.png';
 import posikIpad from '@/assets/PosikiPadMock.png';
+import attestorLap from '@/assets/LaptopAttestor.jpeg';
 const projects = [
   {
     id: 1,
@@ -64,6 +66,14 @@ const projects = [
     skills: ["UI/UX Design", "Figma", "Prototyping", "Gebruikersonderzoek", "Wireframing"]
   },
 
+  {
+    id: 7,
+    title: "Attestor",
+    description: "Attestor is een gespecialiseerd Belgisch bedrijf dat EPC-, asbest- en andere vastgoedkeuringen uitvoert voor zowel particulieren als professionals.",
+    image: attestorLap,
+    skills: ["WordPress","Figma","UI/UX Design","Responsive Design","SEO"]
+  },
+
 ];
 
 const skills = [
@@ -86,7 +96,21 @@ const skills = [
     name: "Social Media Management",
     description: "Het creëren van boeiende content en het beheren van de aanwezigheid op sociale media op alle platforms.",
     icon: Users
-  }
+  },
+
+  {
+    name: "IT Support & Helpdesk",
+    description: "Technische ondersteuning bieden aan gebruikers en IT-problemen oplossen.",
+    icon: MonitorCheck
+  },
+
+  {
+    name: "Hardware & Software Support",
+    description: "Installatie, configuratie en onderhoud van computers, laptops, printers en softwaretoepassingen.",
+    icon: Wrench
+  },
+
+  
 ];
 
 const testimonials = [
@@ -107,6 +131,8 @@ const testimonials = [
   }
   
 ];
+
+
 
 const Portfolio = () => {
   // Aangepaste useEffect die EN animaties regelt EN naar de juiste sectie scrollt
@@ -136,10 +162,12 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
-          style={{ backgroundImage: `url(${heroImage})` }}
+    <Navbar />
+    
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
+        style={{ backgroundImage: `url(${heroImage})` }} 
         />
         <div className="hero-gradient absolute inset-0 opacity-90" />
         
@@ -185,7 +213,7 @@ const Portfolio = () => {
               size="lg"
               className="bg-transparent text-white border-white/30 hover:bg-white/10 backdrop-blur-sm transition-smooth text-lg px-8 py-6"
             >
-              <a href="#over mij">Over mij</a>
+              <a href="#overmij">Over mij</a>
             </Button>
           </div>
           
@@ -195,7 +223,7 @@ const Portfolio = () => {
 
       {/* About Me Section */}
       <motion.section 
-        id="over mij" 
+        id="overmij" 
         className="py-20 px-6"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -213,18 +241,16 @@ const Portfolio = () => {
             >
               <h2 className="text-4xl font-bold mb-6 text-primary">Over mij</h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Hallo, ik ben Bilal met een achtergrond in informaticabeheer en meer dan 3 jaar ervaring in digitaal design, help ik ondernemers om
-                hun ideeën om te zetten in een professionele online uitstraling. 
+                Hallo, ik ben Bilal, afgestudeerd in Informaticabeheer en in Grafische & Digitale Media (UX/UI). 
+                Ik combineer technische IT-kennis met meer dan 3 jaar ervaring in digitaal design.
+
               </p>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Mijn klanten zijn vaak zelfstandigen of kleine bedrijven die hun eerste serieuze stap willen zetten naar een krachtig merk. 
-                Ik begeleid hen van idee tot realisatie en stel kritische vragen, 
-                zodat we samen helder krijgen wat er écht nodig is om hun verhaal online goed over te brengen.
+                Mijn ervaring omvat first-line IT-support, Active Directory-beheer, gebruikersondersteuning en troubleshooting, aangevuld met het ontwerpen van gebruiksvriendelijke websites en digitale interfaces.
               </p>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Je kunt van mij een persoonlijke aanpak verwachten: 
-                ik luister naar jouw wensen, denk strategisch mee en werk zorgvuldig tot in de details. 
-                Het resultaat is een website die niet alleen bij jou past, maar ook jouw klanten overtuigt.
+                Ik help bedrijven en gebruikers door technische problemen efficiënt op te lossen en digitale oplossingen te creëren die zowel functioneel als gebruiksvriendelijk zijn. 
+                Dankzij mijn combinatie van IT en UX/UI kan ik steeds vanuit het perspectief van zowel de gebruiker als de organisatie denken.
               </p>
             </motion.div>
             
@@ -563,7 +589,7 @@ const Portfolio = () => {
             <div>
               <h4 className="font-semibold text-foreground mb-4">Snelle Links</h4>
               <ul className="space-y-2">
-                <li><a href="#over mij" className="text-muted-foreground hover:text-primary transition-smooth">Over mij</a></li>
+                <li><a href="#overmij" className="text-muted-foreground hover:text-primary transition-smooth">Over mij</a></li>
                 <li><a href="#projecten" className="text-muted-foreground hover:text-primary transition-smooth">Projecten</a></li>
                 <li><a href="#skills" className="text-muted-foreground hover:text-primary transition-smooth">Skills</a></li>
                 <li><a href="#contact" className="text-muted-foreground hover:text-primary transition-smooth">Contact</a></li>
@@ -585,7 +611,7 @@ const Portfolio = () => {
           {/* Bottom Bar */}
           <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-muted-foreground text-sm">
-              © 2025 Lahssini Bilal. All rights reserved.
+              © 2026 Lahssini Bilal. All rights reserved.
             </p>
           </div>
         </div>

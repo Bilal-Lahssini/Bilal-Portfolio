@@ -25,7 +25,9 @@ import ufinityGroen from '@/assets/Ufinity Professionals.png';
 import ufinityPaars from '@/assets/Ufinity Technology.png';
 import posikIpad from '@/assets/PosikiPadMock.png';
 import Posikpc from '@/assets/PosikPC.png';
-import PosikMockup from '@/assets/Posik Mockup.png';
+import attestorLap from '@/assets/LaptopAttestor.jpeg';
+import attestorPh from '@/assets/Test att.svg';
+import attestorIpad from '@/assets/MockupAttestor.svg';
 
 
 
@@ -181,7 +183,7 @@ const projectsData = {
     mockups: [Posikpc,posikIpad],
     skills: ["UI/UX Design", "Figma", "Prototyping", "Gebruikersonderzoek", "Wireframing"],
     buttonType: "live", // "live" or "code"
-    liveUrl: "", // Add your live prototype URL here
+    liveUrl: "https://vergaderzalenantwerpen.be/", // Add your live campaign URL here
     projectTitle : "Mockups",
     challenge: "De grootste uitdaging was om het systeem eenvoudig en duidelijk te maken, zodat iedereen het snel kan leren gebruiken.",
     solution: "De oplossing was een gebruiksvriendelijke lay-out met grote knoppen, duidelijke teksten en foto’s van de producten. Zo kunnen werknemers sneller en met minder fouten werken. Alle gegevens worden veilig opgeslagen, zodat het systeem goed blijft functioneren.",
@@ -190,6 +192,34 @@ const projectsData = {
     ],
     results: "",
   },
+
+  7: {
+    title: "Attestor",
+    description: "Attestor is een Belgisch bedrijf gespecialiseerd in vastgoedkeuringen zoals EPC-attesten, asbestkeuringen en andere verplichte certificaten. Door de groei van het dienstenaanbod werd de informatie steeds uitgebreider en minder overzichtelijk op de bestaande online aanwezigheid. Met een nieuwe, frisse website wordt het volledige dienstenpakket duidelijk gepresenteerd en straalt het bedrijf opnieuw professionaliteit en vertrouwen uit.",
+    showcasedescription :' Er werd een boekingsfunctie geïntegreerd om het gebruikersproces eenvoudiger en efficiënter te maken. Bezoekers kunnen rechtstreeks een afspraak inplannen via de website, zonder extra stappen of externe communicatie.',
+    showcasedescription2: 'Dankzij een centraal overzicht met filterbare tabs schakelen bezoekers direct tussen alle tarieven zonder pagina-wissels; dit minimaliseert het zoekwerk en het aantal kliks, wat de kans verkleint dat potentiële klanten de website vroegtijdig verlaten',
+    headerShowcase : 'Boekingsfunctie geïntegreerd',
+    headerShowcase2 : 'Centraal Tarievenoverzicht',
+    image: attestorLap ,
+    mockups: [attestorPh,attestorIpad],
+    skills: ["WordPress","Figma","UI/UX Design","Responsive Design" ,"SEO"],
+    buttonType: "live", // "live" or "code"
+    liveUrl: "https://attestor.be/", // Add your live prototype URL here
+    projectTitle : "",
+    challenge: "De website moest een duidelijkere en gebruiksvriendelijkere ervaring bieden voor bezoekers die snel relevante informatie zoeken. De bestaande structuur maakte het niet altijd eenvoudig om de juiste informatie terug te vinden, waardoor gebruikers meer stappen moesten doorlopen dan nodig.",
+    solution: "Er werd een nieuwe informatiearchitectuur uitgewerkt met focus op eenvoud, overzicht en gebruiksgemak.",
+    improvements: [
+      "Overzichtelijkere navigatiestructuur.",
+      "Snellere toegang tot belangrijke informatie.",
+      "Verbeterde gebruikerservaring op desktop en mobiel.",
+      "Duidelijke gebruikersflow richting boekingen- en offerteaanvragen.",
+      "Professionele en gebruiksvriendelijke online aanwezigheid."
+      
+    ],
+    results: "De nieuwe website zorgt voor een duidelijkere en meer intuïtieve gebruikerservaring, waardoor bezoekers sneller vinden wat ze zoeken en minder stappen nodig hebben om hun doel te bereiken. ",
+  },
+  
+  
 };
 
 const ProjectDetail = () => {
@@ -201,7 +231,7 @@ const ProjectDetail = () => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Project Niet Gevonden</h1>
-          <Link to="">
+          <Link to="/#projecten">
             <Button>Terug naar Portfolio</Button>
           </Link>
         </div>
@@ -578,7 +608,7 @@ const ProjectDetail = () => {
           {/* Bottom Bar */}
           <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-muted-foreground text-sm">
-              © 2025 Lahssini Bilal. All rights reserved.
+              © 2026 Lahssini Bilal. All rights reserved.
             </p>
           </div>
         </div>
